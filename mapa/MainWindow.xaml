@@ -1,0 +1,50 @@
+﻿<Window x:Class="mapa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid" MouseDown="Mapa_MouseDown">
+        <Grid.Background>
+            <ImageBrush ImageSource="/mapa;component/img/kraje_mapa.png" Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <Canvas>
+            <Button x:Name="btnPraha" Content="Praha"
+                Width="90"
+                Height="50"
+                Canvas.Left="254"
+                Canvas.Top="150"
+                Click="City_Click"/>
+
+            <Button x:Name="btnBrno" Content="Brno"
+                Width="75"
+                Height="24"
+                Canvas.Left="461"
+                Canvas.Top="334"
+                Click="City_Click" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="1.039"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+            <Button x:Name="btnOstrava" Content="Ostrava"
+                Width="78"
+                Height="42"
+                Canvas.Left="608"
+                Canvas.Top="233"
+                Click="City_Click"/>
+        </Canvas>
+
+        <TextBlock Name="txtMesto"
+               FontSize="20"
+               FontWeight="Bold"
+               Background="White"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10"/>
+    </Grid>
+</Window>
